@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.body { display: block; }
+.head{
+    width: 100%;
+    height: 10vh;
+}
+.main { max-width: 100%; }
+.results { padding: 5px 0 5px 0; }
+.results>div {
+  box-shadow: 0 2px 1px rgba(0, 0, 0, .5), 0 0 1px rgba(0, 0, 0, .5);
+  margin: 5px 10px;
+  padding: 5px 8px;
+}
+.web {
+  background-color: inherit;
+  font-size: 14px;
+}
+.result {
+  margin: 0;
+  padding: 8px 0;
+}
+.result a { text-decoration: none; }
+.result a:hover span:nth-child(0),
+.result a:hover div:nth-child(0) {
+  text-decoration: underline;
+}
+.description { line-height: normal;}
+.title {
+  color: #2619AF;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.url {
+  color: green;
+  font-size: 16px;
+  word-break: break-all;
+  line-height: 1.4;
+  overflow: ellipsis;
+}
+</style>
+
+<title>Choose a Photo to Predict</title>
+</head>
+<body>
+  <div>
+    <div class="body">
+      <div class="main results">
+    <div class="head">
+        <h1>Choose one Photo to predict</h1>
+    </div>
+        <div class="web">
+        {% for i in face_ids -%}
+          <div class="result">
+            <a href="/predict/{{i}}"><img src="/static/{{i}}.jpg"></a>
+            {% if p %}
+                <h2>{{p}}</h2>
+            {% endif %}
+          </div>
+        {% endfor -%}
+    </div>
+  </div>
+</body>
+</html>
