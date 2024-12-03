@@ -1,1 +1,2 @@
-Graduate Data Science Course I had completed at WPI in Fall 2020
+WPI Graduate Course in Data Science, completed in Fall 2020
+Python course where my work can be seen in the "Problem_.py" files.
